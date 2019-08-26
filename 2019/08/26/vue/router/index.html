@@ -65,19 +65,19 @@
   </script>
 
 
-  <meta name="description" content="写点文章 目的有31 整理学到的知识2 方便复习3 留个脚印">
-<meta name="keywords" content="javascript vue">
+  <meta name="description" content="基础 动态路由匹配   模式 匹配路径 $route.params    /user/:username /user/evan { username: ‘evan’ }   /user/:username/post/:post_id /user/evan/post/123 { username: ‘evan’, post_id: ‘123’ }    &amp;lt;router-link&amp;gt; 对应的">
+<meta name="keywords" content="router">
 <meta property="og:type" content="article">
-<meta property="og:title" content="hello hangfeng">
-<meta property="og:url" content="https://hangfengnice.github.io/2019/08/14/hello-world/index.html">
+<meta property="og:title" content="Vue Router">
+<meta property="og:url" content="https://hangfengnice.github.io/2019/08/26/vue/router/index.html">
 <meta property="og:site_name" content="前端博客">
-<meta property="og:description" content="写点文章 目的有31 整理学到的知识2 方便复习3 留个脚印">
+<meta property="og:description" content="基础 动态路由匹配   模式 匹配路径 $route.params    /user/:username /user/evan { username: ‘evan’ }   /user/:username/post/:post_id /user/evan/post/123 { username: ‘evan’, post_id: ‘123’ }    &amp;lt;router-link&amp;gt; 对应的">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-26T14:49:52.186Z">
+<meta property="og:updated_time" content="2019-08-26T15:00:04.883Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="hello hangfeng">
-<meta name="twitter:description" content="写点文章 目的有31 整理学到的知识2 方便复习3 留个脚印">
-  <link rel="canonical" href="https://hangfengnice.github.io/2019/08/14/hello-world/">
+<meta name="twitter:title" content="Vue Router">
+<meta name="twitter:description" content="基础 动态路由匹配   模式 匹配路径 $route.params    /user/:username /user/evan { username: ‘evan’ }   /user/:username/post/:post_id /user/evan/post/123 { username: ‘evan’, post_id: ‘123’ }    &amp;lt;router-link&amp;gt; 对应的">
+  <link rel="canonical" href="https://hangfengnice.github.io/2019/08/26/vue/router/">
 
 
 <script id="page-configurations">
@@ -91,7 +91,7 @@
   };
 </script>
 
-  <title>hello hangfeng | 前端博客</title>
+  <title>Vue Router | 前端博客</title>
   
 
 
@@ -259,7 +259,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://hangfengnice.github.io/2019/08/14/hello-world/">
+    <link itemprop="mainEntityOfPage" href="https://hangfengnice.github.io/2019/08/26/vue/router/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="hangfeng">
@@ -273,7 +273,7 @@
       <header class="post-header">
 
         
-          <h1 class="post-title" itemprop="name headline">hello hangfeng
+          <h1 class="post-title" itemprop="name headline">Vue Router
 
             
           </h1>
@@ -290,20 +290,25 @@
                 
               
 
-              <time title="创建时间：2019-08-14 19:17:53" itemprop="dateCreated datePublished" datetime="2019-08-14T19:17:53+08:00">2019-08-14</time>
+              <time title="创建时间：2019-08-26 18:16:30 / 修改时间：23:00:04" itemprop="dateCreated datePublished" datetime="2019-08-26T18:16:30+08:00">2019-08-26</time>
             </span>
           
             
 
             
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-08-26 22:49:52" itemprop="dateModified" datetime="2019-08-26T22:49:52+08:00">2019-08-26</time>
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
               </span>
-            
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/vue/" itemprop="url" rel="index"><span itemprop="name">vue</span></a></span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -323,7 +328,7 @@
               
                 <span class="post-meta-item-text">本文字数：</span>
               
-              <span>30</span>
+              <span>2.6k</span>
             </span>
           
             <span class="post-meta-item" title="阅读时长">
@@ -333,7 +338,7 @@
               
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
               
-              <span>1 分钟</span>
+              <span>2 分钟</span>
             </span>
           
 
@@ -346,7 +351,104 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="写点文章-目的有3"><a href="#写点文章-目的有3" class="headerlink" title="写点文章 目的有3"></a>写点文章 目的有3</h2><h3 id="1-整理学到的知识"><a href="#1-整理学到的知识" class="headerlink" title="1 整理学到的知识"></a>1 整理学到的知识</h3><h3 id="2-方便复习"><a href="#2-方便复习" class="headerlink" title="2 方便复习"></a>2 方便复习</h3><h3 id="3-留个脚印"><a href="#3-留个脚印" class="headerlink" title="3 留个脚印"></a>3 留个脚印</h3>
+        <h2 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h2><ul>
+<li><strong>动态路由匹配</strong><table>
+<thead>
+<tr>
+<th>模式</th>
+<th>匹配路径</th>
+<th align="center">$route.params</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>/user/:username</td>
+<td>/user/evan</td>
+<td align="center">{ username: ‘evan’ }</td>
+</tr>
+<tr>
+<td>/user/:username/post/:post_id</td>
+<td>/user/evan/post/123</td>
+<td align="center">{ username: ‘evan’, post_id: ‘123’ }</td>
+</tr>
+</tbody></table>
+</li>
+<li><code>&lt;router-link&gt;</code> 对应的路由匹配成功，将自动设置 class 属性值 .router-link-active</li>
+<li><strong>通配符路由时</strong></li>
+</ul>
+<a id="more"></a>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 给出一个路由 &#123; path: '/user-*' &#125;</span></span><br><span class="line"><span class="keyword">this</span>.$router.push(<span class="string">'/user-admin'</span>)</span><br><span class="line"><span class="keyword">this</span>.$route.params.pathMatch <span class="comment">// 'admin'</span></span><br><span class="line"><span class="comment">// 给出一个路由 &#123; path: '*' &#125;</span></span><br><span class="line"><span class="keyword">this</span>.$router.push(<span class="string">'/non-existing'</span>)</span><br><span class="line"><span class="keyword">this</span>.$route.params.pathMatch <span class="comment">// '/non-existing'</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>编程式导航</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">声明式</th>
+<th align="center">编程式</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">&lt;router-link :to=”…”&gt;</td>
+<td align="center">router.push(…)</td>
+</tr>
+</tbody></table>
+<p>该方法的参数可以是一个字符串路径，或者一个描述地址的对象。例如</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 字符串</span></span><br><span class="line">router.push(<span class="string">'home'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 对象</span></span><br><span class="line">router.push(&#123; <span class="attr">path</span>: <span class="string">'home'</span> &#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 命名的路由</span></span><br><span class="line">router.push(&#123; <span class="attr">name</span>: <span class="string">'user'</span>, <span class="attr">params</span>: &#123; <span class="attr">userId</span>: <span class="string">'123'</span> &#125;&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 带查询参数，变成 /register?plan=private</span></span><br><span class="line">router.push(&#123; <span class="attr">path</span>: <span class="string">'register'</span>, <span class="attr">query</span>: &#123; <span class="attr">plan</span>: <span class="string">'private'</span> &#125;&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>注意：如果提供了 path，params 会被忽略，上述例子中的 query 并不属于这种情况。取而代之的是下面例子的做法，你需要提供路由的 name 或手写完整的带有参数的 path</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> userId = <span class="string">'123'</span></span><br><span class="line">router.push(&#123; <span class="attr">name</span>: <span class="string">'user'</span>, <span class="attr">params</span>: &#123; userId &#125;&#125;) <span class="comment">// -&gt; /user/123</span></span><br><span class="line">router.push(&#123; <span class="attr">path</span>: <span class="string">`/user/<span class="subst">$&#123;userId&#125;</span>`</span> &#125;) <span class="comment">// -&gt; /user/123</span></span><br><span class="line"><span class="comment">// 这里的 params 不生效</span></span><br><span class="line">router.push(&#123; <span class="attr">path</span>: <span class="string">'/user'</span>, <span class="attr">params</span>: &#123; userId &#125;&#125;) <span class="comment">// -&gt; /user</span></span><br></pre></td></tr></table></figure>
+
+<p>:laughing: 同样的规则也适用于 router-link 组件的 to 属性。</p>
+<ul>
+<li><p><em>router.replace(location, onComplete?, onAbort?)跟 router.push 很像，唯一的不同就是，它不会向 history 添加新记录，而是跟它的方法名一样 —— 替换掉当前的 history 记录</em></p>
+</li>
+<li><p>Vue Router 的导航方法 (push、 replace、 go) 在各类路由模式 (history、 hash 和 abstract) 下表现一致</p>
+</li>
+<li><p><strong>命名视图</strong></p>
+</li>
+<li><p>默认 default</p>
+</li>
+<li><p><strong>重定向 别名</strong></p>
+</li>
+</ul>
+<p>redirect alias</p>
+<ul>
+<li><strong>路由组件传参</strong></li>
+</ul>
+<ol>
+<li><p>布尔模式<br>&emsp;如果 props 被设置为 true，route.params 将会被设置为组件属性</p>
+</li>
+<li><p>如果 props 是一个对象，它会被按原样设置为组件属性。当 props 是静态的时候有用</p>
+</li>
+<li><p>函数模式</p>
+</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> router = <span class="keyword">new</span> VueRouter(&#123;</span><br><span class="line">  routes: [</span><br><span class="line">    &#123; <span class="attr">path</span>: <span class="string">'/search'</span>, <span class="attr">component</span>: SearchUser, <span class="attr">props</span>: <span class="function">(<span class="params">route</span>) =&gt;</span> (&#123; <span class="attr">query</span>: route.query.q &#125;) &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h2 id="导航守卫"><a href="#导航守卫" class="headerlink" title="导航守卫"></a>导航守卫</h2><h3 id="全局"><a href="#全局" class="headerlink" title="全局"></a>全局</h3><h4 id="全局前置守卫-router-beforeEach"><a href="#全局前置守卫-router-beforeEach" class="headerlink" title="全局前置守卫 router.beforeEach"></a>全局前置守卫 <code>router.beforeEach</code></h4><h4 id="全局后置钩子-router-afterEach"><a href="#全局后置钩子-router-afterEach" class="headerlink" title="全局后置钩子 router.afterEach"></a>全局后置钩子 <code>router.afterEach</code></h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">router.afterEach(<span class="function">(<span class="params">to, <span class="keyword">from</span></span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">// ...全局后置钩子，然而和守卫不同的是，这些钩子不会接受 next 函数也不会改变导航本身</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h3 id="路由独享的守卫"><a href="#路由独享的守卫" class="headerlink" title="路由独享的守卫"></a>路由独享的守卫</h3><h4 id="beforeEnter"><a href="#beforeEnter" class="headerlink" title="beforeEnter"></a><code>beforeEnter</code></h4><h3 id="组件内的守卫"><a href="#组件内的守卫" class="headerlink" title="组件内的守卫"></a>组件内的守卫</h3><h4 id="beforeRouteEnter-beforeRouteUpdate-2-2-新增-beforeRouteLeave"><a href="#beforeRouteEnter-beforeRouteUpdate-2-2-新增-beforeRouteLeave" class="headerlink" title="beforeRouteEnter beforeRouteUpdate (2.2 新增) beforeRouteLeave"></a><code>beforeRouteEnter</code> <code>beforeRouteUpdate</code> (2.2 新增) <code>beforeRouteLeave</code></h4><ul>
+<li><strong>beforeRouteEnter 守卫 不能 访问 this，因为守卫在导航确认前被调用,因此即将登场的新组件还没被创建。</strong></li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">beforeRouteEnter (to, <span class="keyword">from</span>, next) &#123;</span><br><span class="line">  next(<span class="function"><span class="params">vm</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">// 通过 `vm` 访问组件实例</span></span><br><span class="line">  &#125;)</span><br><span class="line">  <span class="comment">// 注意 beforeRouteEnter 是支持给 next 传递回调的唯一守卫。对于 beforeRouteUpdate 和 beforeRouteLeave 来说，this 已经可用了，所以不支持传递回调，因为没有必要了</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="完整的导航解析流程"><a href="#完整的导航解析流程" class="headerlink" title="完整的导航解析流程"></a>完整的导航解析流程</h3><ol>
+<li>导航被触发。</li>
+<li>在失活的组件里调用离开守卫。</li>
+<li>调用全局的 beforeEach 守卫。</li>
+<li>在重用的组件里调用 beforeRouteUpdate 守卫 (2.2+)。</li>
+<li>在路由配置里调用 beforeEnter。</li>
+<li>解析异步路由组件。</li>
+<li>在被激活的组件里调用 beforeRouteEnter。</li>
+<li>调用全局的 beforeResolve 守卫 (2.5+)。</li>
+<li>导航被确认。</li>
+<li>调用全局的 afterEach 钩子。</li>
+<li>触发 DOM 更新。</li>
+<li>用创建好的实例调用 beforeRouteEnter 守卫中传给 next 的回调函数。</li>
+</ol>
+
     </div>
 
     
@@ -356,21 +458,30 @@
       
 
       <footer class="post-footer">
+          
+            
+          
+          <div class="post-tags">
+            
+              <a href="/tags/router/" rel="tag"># router</a>
+            
+          </div>
+        
 
         
 
           <div class="post-nav">
             <div class="post-nav-next post-nav-item">
               
+                <a href="/2019/08/26/markdown/" rel="next" title="markdown语法">
+                  <i class="fa fa-chevron-left"></i> markdown语法
+                </a>
+              
             </div>
 
             <span class="post-nav-divider"></span>
 
             <div class="post-nav-prev post-nav-item">
-              
-                <a href="/2019/08/26/浏览器模型/window对象/" rel="prev" title="浏览器模型/window对象">
-                  浏览器模型/window对象 <i class="fa fa-chevron-right"></i>
-                </a>
               
             </div>
           </div>
@@ -517,7 +628,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#写点文章-目的有3"><span class="nav-number">1.</span> <span class="nav-text">写点文章 目的有3</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-整理学到的知识"><span class="nav-number">1.1.</span> <span class="nav-text">1 整理学到的知识</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-方便复习"><span class="nav-number">1.2.</span> <span class="nav-text">2 方便复习</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-留个脚印"><span class="nav-number">1.3.</span> <span class="nav-text">3 留个脚印</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#基础"><span class="nav-number">1.</span> <span class="nav-text">基础</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#导航守卫"><span class="nav-number">2.</span> <span class="nav-text">导航守卫</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#全局"><span class="nav-number">2.1.</span> <span class="nav-text">全局</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#全局前置守卫-router-beforeEach"><span class="nav-number">2.1.1.</span> <span class="nav-text">全局前置守卫 router.beforeEach</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#全局后置钩子-router-afterEach"><span class="nav-number">2.1.2.</span> <span class="nav-text">全局后置钩子 router.afterEach</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#路由独享的守卫"><span class="nav-number">2.2.</span> <span class="nav-text">路由独享的守卫</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#beforeEnter"><span class="nav-number">2.2.1.</span> <span class="nav-text">beforeEnter</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#组件内的守卫"><span class="nav-number">2.3.</span> <span class="nav-text">组件内的守卫</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#beforeRouteEnter-beforeRouteUpdate-2-2-新增-beforeRouteLeave"><span class="nav-number">2.3.1.</span> <span class="nav-text">beforeRouteEnter beforeRouteUpdate (2.2 新增) beforeRouteLeave</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#完整的导航解析流程"><span class="nav-number">2.4.</span> <span class="nav-text">完整的导航解析流程</span></a></li></ol></li></ol></div>
             
 
           </div>
